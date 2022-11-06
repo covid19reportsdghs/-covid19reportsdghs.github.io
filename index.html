@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)https://covid19reports.dghs.gov.bd/ -->
+<html class="k-webkit k-webkit107"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>রিপোর্ট/সার্টিফিকেট(ডাউনলোড) || Covid Lab </title>
+    <link href="./index_files/kendo.bootstrap-v4.min.css" rel="stylesheet">
+
+<link href="./index_files/Site.css" rel="stylesheet" type="text/css">
+<script src="./index_files/jquery.min.js.download"></script>
+<script src="./index_files/jszip.min.js.download"></script>
+<script src="./index_files/kendo.all.min.js.download"></script>
+<script src="./index_files/kendo.aspnetmvc.min.js.download"></script>
+<script src="./index_files/bootstrap.min.js.download"></script>
+
+<script src="./index_files/bootbox.all.min.js.download"></script>
+<link href="./index_files/all.min.css" rel="stylesheet">
+
+<link href="./index_files/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+
+
+
+<link href="./index_files/myStyle.css" rel="stylesheet">
+
+<script>
+    function alertBox(title, message) {
+
+        bootbox.alert({ title: title, message: message });
+    }
+
+
+    function frmVelidate(id) {
+        var _form = $("#" + id);
+        var valid = true;
+        var validator = _form.validate()
+
+
+        anyError = false;
+        $('#' + id).find('input').filter(':visible').each(function () {
+
+
+            try {
+                if (!validator.element(this)) {
+                    anyError = true;
+                    valid = false;
+                }
+            }
+            catch (ex) {
+                alert(ex);
+            }
+        });
+
+        if (anyError) {
+            _form.submit(function (event) {
+                var kValidator = _form.kendoValidator().data("kendoValidator");
+
+                event.preventDefault(); kValidator.validate();
+               
+            });
+
+          
+        }
+        return valid; // exit if any error found
+    }
+
+    function confirmBox(title, message) {
+        var res = false;
+        var cc = bootbox.confirm({
+            title: title,
+            message: message,
+            buttons: {
+                confirm: {
+                    label: 'Yes',
+                    className: 'btn-success'
+                },
+                cancel: {
+                    label: 'No',
+                    className: 'btn-danger'
+                }
+            },
+            callback: function (result) {
+
+                alert(result);
+            }, onHide: function (e) {
+                e.preventDefault();
+                cc.remove();
+                $('.modal-backdrop').remove();
+            }
+        });
+
+        return res;
+    }
+
+</script>
+    <style>
+    </style>
+</head>
+<body>
+
+
+    <!--open container-->
+    <div class="container-fluid"> 
+        <div class="col col-12 xHeader"> 
+            
+
+<link href="./index_files/menucss.css" rel="stylesheet">
+
+<style>
+    .mnuBorder {
+        border: 1px solid black;
+        background-color: transparent;
+    }
+
+    .wmnuLog {
+        display: none;
+        z-index: 9999;
+        position: absolute;
+        overflow: hidden;
+        top: 50px;
+        border-radius: 5px;
+        border: 1px solid orange;
+        right: 0px;
+    }
+
+    .uPic:hover + div {
+        display: inline;
+        border: 1px solid orange;
+    }
+
+    .wmnuLog:hover {
+        display: inline;
+        border: 1px solid orange;
+    }
+</style>
+
+ 
+<script>
+
+    function showSuggest() {
+        var myWindow = $("#divSuggest").data("kendoWindow");
+
+        var ww = $(window).width();
+        if (ww <= 600) {
+            $('.k-window').css("width", $(window).width() * .9); 
+        }
+        else {
+            $('.k-window').css("width", $(window).width() * .5);
+        } 
+        myWindow.center().open();
+    }
+
+</script>
+  
+<img src="./index_files/images.jpg" height="45" style="float:left">
+<ul class="menux visible-lg visible-md visible-sm" style="margin-left:9em">
+
+    <li class="xMain active">
+
+        <a class="active mm" href="https://covid19reports.dghs.gov.bd/"><i class="fa fa-home"></i>  Home</a>
+    </li>
+
+
+
+     <li class="xMain" style="float: right;">
+                <a class="mm" style="color: white !important" href="https://covid19reports.dghs.gov.bd/User/LogIn"><i class="fa fa-sign-in"></i> SIGN IN</a>
+
+
+    </li>
+
+</ul>
+
+ 
+
+<link href="./index_files/menucss.css" rel="stylesheet">
+<!--Google -Fonts-->
+
+
+<!--Font-awsome-->
+
+
+
+
+<script>
+
+    $(document).ready(function () {
+        var lnk = window.location.pathname;
+
+        $('li').removeClass('active');
+        if (lnk.split("/")[2] != "ChangePassword") {
+            $('li:has(a[href="' + lnk + '"])').addClass('active');
+
+        }
+        //responsive menu toggle
+        $("#menutoggle").click(function () {
+            $('.xs-menu').toggleClass('displaynone');
+
+        });
+        //add active class on menu
+        $('ul li').click(function (e) {
+            //  e.preventDefault();
+
+        });
+        //drop down menu
+        $(".drop-down").hover(function () {
+            $(this + '.mega-menu').addClass('display-on');
+        });
+        $(".drop-down").mouseleave(function () {
+            $('.mega-menu').removeClass('display-on');
+        });
+
+    });
+</script>
+
+ 
+        </div>
+
+        <div class="col col-12 xBody">
+            <div id="mainHead" style="border:1px double green; font-weight:bold; margin-bottom:2px !important; background-image: linear-gradient(#808080, #eae7e7);padding:3px 5px 10px 5px !important ;border-top-right-radius:10px; border-top-left-radius:10px ">
+                রিপোর্ট/সার্টিফিকেট(ডাউনলোড)
+            </div>
+            <div class="row" style="margin-bottom:0 !important; ">
+          
+                <div class="col col-lg-12  col-md-12 col-sm-12 " style="padding:0px !important;">
+                    
+
+
+
+<script>
+    var sentOTP = "";
+    var result;
+    var sesName = "Temp";
+    var counter = 1;
+
+    function onDataBound(e) {
+        counter = 1;
+    }
+
+    function renderNumber(data) {
+        return counter++;
+    }
+
+    function back() {
+        $('#divPrint').hide();
+        $('#divList').show();
+    }
+    function printReport(e) {
+
+
+        var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
+        $('#divPrint').show();
+        $('#divList').hide();
+        if (dataItem.certificate == "") { $('#divCertificate').load('/Result/_showReport/' + dataItem.SlNo); } else { $('#divCertificate').html(dataItem.certificate); }
+
+
+        //var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
+        //$('#divPrint').show();
+        //$('#divList').hide();
+
+        //$('#divCertificate').html(dataItem.certificate)
+     ///   $('#divCertificate').load('/Goto/showCertificate?mobileNo=' + dataItem.CaseID);
+    }
+    function Print() {
+      //  var divToPrint = document.getElementById('divCertificate');
+      //  var htmlToPrint = divToPrint.outerHTML;
+      //var  newWin = window.open("");
+      //  newWin.document.write(htmlToPrint);
+      //  newWin.print();
+      //  newWin.close();
+
+        var printContents = document.getElementById('divCertificate').innerHTML;
+        var originalContents = document.body.innerHTML;
+
+        document.body.innerHTML = printContents;
+
+        window.print();
+
+        document.body.innerHTML = originalContents;
+    }
+
+    $(document).ready(function () {
+        $('#divAjaxLoad').hide();
+
+        $("input").on("click",function () {
+
+                $(this).select();
+
+        });
+
+    $('input').on('change keyup paste', function () {
+        if ($(this).val().length > 11) {
+            $(this).val($(this).val().substr(0, 10));
+        }
+    });
+    });
+    function numericFilter(txb) {
+        txb.value = txb.value.replace(/[^\0-9]/ig, "");
+    }
+    var countDownDate = new Date().getTime();
+    function getOTP() {
+        sentOTP = "";
+        var now = new Date();
+        var y = now.getFullYear();
+        var m = now.getMonth() + 1;
+        var d = now.getDate();
+        var h = now.getHours();
+        var mm = now.getMinutes();
+        var s = now.getSeconds();
+        $("#OtpCreatesAt").val(y + '-' + m + '-' + d + ' ' + h + ':' + mm + ':' + s);
+        //     $("#frmSub").submit();
+        $.post("/Home/Otp_send/", { mobileNo: $('#txtMobileNo').val(), dt: $("#OtpCreatesAt").val() }, function (data) {
+             $('#txtOTP').val(''); 
+            if (data.isOK) { 
+                if (data.resC> 0) {
+                    sentOTP = data.otp;
+                    $('#btnOTP').hide();
+                    $('#divSubmit').show();
+                    $('#btnSubmit').show();
+                    $('#txtOTP').focus();
+                    countDownDate = new Date(data.OtpExpAt).getTime();
+                    
+                    StartTimer();
+                }
+                else {
+
+                    var conf = bootbox.alert({
+                        title: "OTP Not Sent", message: "<div style='text-align:center; font-weight:bold'>Mobile No Not Matched <br />or <br />Result is Not Ready</div>", onHide: function (e) {
+                            e.preventDefault(); conf.remove();
+                            $('.modal-backdrop').remove();
+                        }
+                    });
+                }
+
+                //if (data.res.length > 0) {
+                //    sentOTP = data.otp.Otp;
+                //    $('#btnOTP').hide();
+                //    $('#divSubmit').show();
+                //    $('#btnSubmit').show();
+                //    $('#txtOTP').focus();
+                //    countDownDate = new Date(data.otp.OtpExp).getTime();
+                //    result =;
+                //    StartTimer();
+                //}
+                //else {
+
+                //    var conf= bootbox.alert({
+                //        title: "OTP Not Sent", message: "<div style='text-align:center; font-weight:bold'>Mobile No Not Matched <br />or <br />Result is Not Ready</div>", onHide: function (e) {
+                //            e.preventDefault(); conf.remove();
+                //            $('.modal-backdrop').remove();
+                //        }
+                //    });
+                //}
+            }
+            else {
+                try {
+                    var mm = data.txt;
+                    var conf = bootbox.alert({
+                        title: "OTP Not Sent", message: mm, onHide: function (e) {
+                            e.preventDefault(); conf.remove(); $('.modal-backdrop').remove();
+                        }
+                    });
+                }
+                catch (ex) {
+
+                }
+                $('#btnOTP').show();
+                $('#divSubmit').hide();
+                $('#lblText').html('উপরোক্ত নাম্বারে একটি কোড পাঠানো হবে');
+                $('#btnSubmit').hide();
+            }
+
+        }
+
+        )
+
+    }
+
+        var x;
+
+
+        function StartTimer() {
+            x = setInterval("RunTimer()", 1000);
+        }
+
+        function RunTimer() {
+            // Get today's date and time
+            var now = new Date().getTime();
+          //  alert(now);
+            //alert(countDownDate);
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            //var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            //var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the result in the element with id="demo"
+            document.getElementById("lblText").innerHTML = 'ওটিপি প্রদানের জন্য সময় আছে আর মাত্র <span class="color-brac" style="color:red">' + minutes + 'm ' + seconds + 's </span>';
+
+            // If the count down is finished, write some text
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("lblText").innerHTML = "ওটিপি প্রদানের সময় শেষ হয়ে গিয়েছে ";
+                $('#btnOTP').show();
+                $('#divSubmit').hide();
+                $('#lblText').html('উপরোক্ত নাম্বারে একটি কোড পাঠানো হবে');
+            }
+        }
+
+</script>
+<style>
+    .col-sm-12 input
+    {
+        width:100% !important
+    }
+</style>
+<div id="divAjaxLoad" class="row modal-backdrop" style="background-image: url(&quot;../../Images/loading2.gif&quot;); background-repeat: no-repeat; background-position: center center; opacity: 0.7; display: none; align-content: center !important; align-items: center !important; background-color: rgb(218, 215, 215) !important;">
+ 
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#divAjaxLoad').hide();
+    })
+    $(document).ajaxStart(function () { $('#divAjaxLoad').show(); });
+    $(document).ajaxStop(function () { $('#divAjaxLoad').hide(); });
+</script>
+
+
+<div hidden="">
+    <input id="OtpCreatesAt">
+</div>
+<div id="divList" class="row">
+    <div class="col-12 row" style="border-bottom:3px double green; padding-bottom:5px !important">
+        <div class="col-lg-9 col-md-9 col-sm-12" style="margin-top:5px !important">
+            <input onkeyup="numericFilter(this)" size="11" autofocus="" class="k-textbox" id="txtMobileNo" style="font-size:1.2em; font-weight:bold" placeholder="টেষ্টের সময় দেওয়া মোবাইল নং (ইংরেজিতে)">
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-12" style="margin-top:5px !important">
+            <a id="btnOTP" class="btn btn-success" onclick="getOTP()" style="width:10em !important; font-size:1.1em; font-weight:bold "><span class="fa fa-check"></span> Get OTP</a> 
+        </div>
+    </div>
+    <div class="col-12">
+        <label id="lblText" style="color:blue; font-weight:bolder; font-size:1.5em">উপরোক্ত নাম্বারে একটি কোড পাঠানো হবে</label>
+
+       
+    </div>
+    <div class="col-12" id="divSubmit" style="display:none">
+        <input onkeyup="numericFilter(this)" size="11" autofocus="" class="k-textbox" id="txtOTP" style="font-size:1.2em; font-weight:bold; width:40vw !important; float:left" placeholder="ওটিপি কোডটি টাইপ করুন">
+        <a id="btnSubmit" class="btn btn-success" onclick="submitQueryM()" style="margin-left:5px !important;display:none; float:left;font-size:1.1em; font-weight:bold;"><span class="fa fa-check"></span> সাবমিট করুন</a>
+        <a class="btn btn-warning" onclick="refresh()" style="margin-left:5px !important; float:left;font-size:1.1em; font-weight:bold; "><span class="fa fa-recycle"></span>  রিফ্রেশ </a>
+
+    </div>
+    <div id="divResult" class="col-12" style="padding:10px; display:none">
+        <script>
+            function refresh() {
+                location.href="/"   ;
+
+            }
+            function getParam() {
+
+                return { mobileNo: $('#txtMobileNo').val(), ReqBy:"P"};
+            }
+        </script>
+        <div class="k-widget k-grid k-display-block" id="gridRole" style="width:99.9%;height:calc(73vh); cursor:pointer; overflow-y:auto " data-role="grid"><table role="grid" data-role="selectable" class="k-selectable"><colgroup><col style="width:45px"><col style="width:120px"><col><col style="width:100px"><col><col style="width:150px"><col style="width:60px"><col style="width:60px"><col style="width:100px"><col style="width:100px"><col style="width:80px"><col style="width:80px"></colgroup><thead class="k-grid-header" role="rowgroup"><tr role="row"><th class="k-header" data-index="0" id="2b2ebf2d-0a0a-4ad0-96d4-5e3f4353653a" scope="col"><span class="k-link">ক্রম</span></th><th class="k-header" data-field="CaseID" data-index="1" data-title="ক্রম" id="fb3997b1-f0e0-4776-a28e-a264198ecf27" scope="col" style="display:none"><span class="k-link">ক্রম</span></th><th class="k-header" data-field="SlNo" data-index="2" data-title="ক্রম" id="d5de6f94-c01c-4b62-bf47-1de6f44f2b88" scope="col" style="display:none"><span class="k-link">ক্রম</span></th><th class="k-header" data-field="MobileNo" data-index="3" data-title="মোবাইল নং" id="216d4ae5-21cb-45ec-a396-c0f1a1707ac3" scope="col"><span class="k-link">মোবাইল নং</span></th><th class="k-header" data-field="LaboratoryName" data-index="4" data-title="ল্যাব" id="2fea257f-453d-49dd-9bf8-8f442441791a" scope="col"><span class="k-link">ল্যাব</span></th><th class="k-header" data-field="PassportNo" data-index="5" data-title="পাসপোর্ট নাম্বার" id="6ae0e522-43df-4fdd-83df-982bb3ba6b45" scope="col"><span class="k-link">পাসপোর্ট নাম্বার</span></th><th class="k-header" data-field="SampleCollectionBy" data-index="6" data-title="সেম্পল কালেক্ট" id="5c61e78b-fc0e-4033-8d85-e4ce6af566c3" scope="col" style="display:none"><span class="k-link">সেম্পল কালেক্ট</span></th><th class="k-header" data-field="SpecimenReceivedDate" data-index="7" data-title="সেম্পল কালেক্ট" id="5ff26ac8-5ea5-4f03-a970-019300966536" scope="col"><span class="k-link">সেম্পল কালেক্ট</span></th><th class="k-header" data-field="FirstName" data-index="8" data-title="রোগীর নাম" id="2e3ab05c-29f7-463a-9118-954d3e670d66" scope="col"><span class="k-link">রোগীর নাম</span></th><th class="k-header" data-field="Age" data-index="9" data-title="বয়স" id="33da8e43-8a9d-43c1-be08-c93a85f01a2f" scope="col"><span class="k-link">বয়স</span></th><th class="k-header" data-field="Sex" data-index="10" data-title="লিঙ্গ" id="6eabf5e4-f07e-4d4c-a393-54b695b8f583" scope="col"><span class="k-link">লিঙ্গ</span></th><th class="k-header" data-field="District" data-index="11" data-title="উপজেলা সিটি/কর্পোরেশন" id="45804e77-e194-4ca5-90ab-66faf141ce04" scope="col" style="display:none"><span class="k-link">উপজেলা সিটি/কর্পোরেশন</span></th><th class="k-header" data-field="District" data-index="12" data-title="জেলা" id="3a00f156-b8ae-49e3-b119-658d82243934" scope="col"><span class="k-link">জেলা</span></th><th class="k-header" data-field="TestResultDate" data-index="13" data-title="টেষ্টের তারিখ" id="758714d4-a857-472e-9961-86c86aebf1fb" scope="col"><span class="k-link">টেষ্টের তারিখ</span></th><th class="k-header" data-field="TestResult" data-index="14" data-title="ফলাফল" id="902eb775-4e62-4d10-9fda-5b250a833ee1" scope="col"><span class="k-link">ফলাফল</span></th><th class="k-header" data-field="certificate" data-index="15" data-title="ফলাফল" id="0f0cd5f9-cb94-4ea7-8ec1-f889bd36ab58" scope="col" style="display:none"><span class="k-link">ফলাফল</span></th><th class="k-header" data-index="16" id="3d55b111-d697-4611-9c81-c59dc8bbe87b" scope="col"><span class="k-link">সার্টিফিকেট</span></th></tr></thead><tbody role="rowgroup"></tbody></table></div><script>
+	kendo.syncReady(function(){jQuery("#gridRole").kendoGrid({"dataBound":onDataBound,"columns":[{"title":"ক্রম","width":"45px","template":"#= renderNumber(data) #"},{"title":"ক্রম","headerAttributes":{"data-field":"CaseID","data-title":"ক্রম"},"hidden":true,"width":"60px","field":"CaseID","encoded":true},{"title":"ক্রম","headerAttributes":{"data-field":"SlNo","data-title":"ক্রম"},"hidden":true,"width":"45px","field":"SlNo","encoded":true},{"title":"মোবাইল নং","headerAttributes":{"data-field":"MobileNo","data-title":"মোবাইল নং"},"width":"120px","field":"MobileNo","encoded":true},{"title":"ল্যাব","headerAttributes":{"data-field":"LaboratoryName","data-title":"ল্যাব"},"field":"LaboratoryName","encoded":true},{"title":"পাসপোর্ট নাম্বার","headerAttributes":{"data-field":"PassportNo","data-title":"পাসপোর্ট নাম্বার"},"width":"100px","field":"PassportNo","encoded":true},{"title":"সেম্পল কালেক্ট","headerAttributes":{"data-field":"SampleCollectionBy","data-title":"সেম্পল কালেক্ট"},"hidden":true,"field":"SampleCollectionBy","encoded":true},{"title":"সেম্পল কালেক্ট","headerAttributes":{"data-field":"SpecimenReceivedDate","data-title":"সেম্পল কালেক্ট"},"field":"SpecimenReceivedDate","format":"{0:dd-MMM-yyyy}","encoded":true},{"title":"রোগীর নাম","headerAttributes":{"data-field":"FirstName","data-title":"রোগীর নাম"},"width":"150px","field":"FirstName","encoded":true},{"title":"বয়স","headerAttributes":{"data-field":"Age","data-title":"বয়স"},"width":"60px","field":"Age","encoded":true},{"title":"লিঙ্গ","headerAttributes":{"data-field":"Sex","data-title":"লিঙ্গ"},"width":"60px","field":"Sex","encoded":true},{"title":"উপজেলা সিটি/কর্পোরেশন","headerAttributes":{"data-field":"District","data-title":"উপজেলা সিটি/কর্পোরেশন"},"hidden":true,"width":"100px","field":"District","encoded":true},{"title":"জেলা","headerAttributes":{"data-field":"District","data-title":"জেলা"},"width":"100px","field":"District","encoded":true},{"title":"টেষ্টের তারিখ","headerAttributes":{"data-field":"TestResultDate","data-title":"টেষ্টের তারিখ"},"width":"100px","field":"TestResultDate","format":"{0:dd-MMM-yyyy}","encoded":true},{"title":"ফলাফল","headerAttributes":{"data-field":"TestResult","data-title":"ফলাফল"},"width":"80px","field":"TestResult","encoded":true},{"title":"ফলাফল","headerAttributes":{"data-field":"certificate","data-title":"ফলাফল"},"hidden":true,"width":"80px","field":"certificate","encoded":true},{"title":"সার্টিফিকেট","width":"80px","command":[{"name":"btnInsAdd","buttonType":"ImageAndText","text":"\u003cspan style=\u0027color:green padding-right:5px !imporant\u0027 class=\u0027fa fa-eye\u0027\u003e\u003c/span\u003e Show","click":printReport}]}],"selectable":"Single, Row","scrollable":false,"dataSource":{"type":(function(){if(kendo.data.transports['aspnetmvc-ajax']){return 'aspnetmvc-ajax';} else{throw new Error('The kendo.aspnetmvc.min.js script is not included.');}})(),"transport":{"read":{"url":"/Home/getResult","data":getParam},"prefix":""},"serverPaging":true,"serverSorting":true,"serverFiltering":true,"serverGrouping":true,"serverAggregates":true,"filter":[],"schema":{"data":"Data","total":"Total","errors":"Errors","model":{"id":"SlNo","fields":{"SlNo":{"type":"number"},"EnrollmentDate":{"type":"date"},"OrganisationUnitName":{"type":"string"},"CaseID":{"type":"string"},"TEI":{"type":"string"},"MobileNo":{"type":"string"},"FirstName":{"type":"string"},"Surname":{"type":"string"},"Age":{"type":"string"},"Sex":{"type":"string"},"District":{"type":"string"},"Upazila":{"type":"string"},"HomeAddress":{"type":"string"},"PassportNo":{"type":"string"},"sampleID":{"type":"string"},"SpecimenReceivedDate":{"type":"date","defaultValue":null},"TestResultDate":{"type":"date"},"TestResult":{"type":"string"},"LaboratoryName":{"type":"string"},"TypeOfTest":{"type":"string"},"certificate":{"type":"string"},"RelationCode":{"type":"string"},"Relation":{"type":"string"},"SampleCollectionBy":{"type":"string"}}}}}});});
+</script>
+    </div>
+    <div id="divmessage" class="col-12" style="padding:10px;font-weight:bold; font-size:2.5em; color:red; text-align:center">
+
+
+    </div>
+</div>
+
+<div id="divPrint" style="display:none">
+    <div style="border-bottom:3px double green">
+        <a class="btn btn-warning" onclick="back()"> <span class="fa fa-backward"></span> Back</a>
+        <a class="btn btn-success" onclick="Print()" style="float:right"> <span class="fa fa-print"></span> Print</a>
+        
+    </div>
+    <div id="divCertificate">
+
+    </div>
+</div>
+
+<script>
+
+    function reset() {
+        $('#divmessage').html('');
+        $('#txtMobileNo').removeAttr("readonly");
+        $('#txtPassportNo').removeAttr("readonly");
+        $('#txtMobileNo').val(''); $('#txtPassportNo').val('');
+        $('#txtMobileNo').focus();
+       $('#divResult').hide();
+        var grid = $("#gridRole").data("kendoGrid");
+        grid.dataSource.data([]);
+    }
+    function submitQuery() {
+        var mob = $('#txtMobileNo').val();
+        var pass = $('#txtPassportNo').val();
+        $('#txtMobileNo').attr("readonly", "readonly");
+        $('#txtPassportNo').attr("readonly", "readonly");
+        $('#divmessage').html('');
+
+        //$.post('/Goto/CheckWithPassport', { MobileNo: mob, PassportNo: pass }, function (data) {
+
+        //    if (!data.isDone) {
+        //        $('#divmessage').html(data.message);
+        //    }
+        //    else {
+        //        $('#divResult').show();
+
+        //         var grid = $("#gridRole").data("kendoGrid");
+        //     ///   grid.setDataSource(data.Person);
+
+        //         grid.dataSource.add({
+        //             CaseID: data.Person[0].CaseID, SlNo: data.Person[0].SlNo, MobileNo: data.Person[0].MobileNo, Lab: data.Person[0].Lab, SampleCollectionBy: data.Person[0].SampleCollectionBy,
+        //             PassportNo: data.Person[0].PassportNo,  Name: data.Person[0].Name, Age: data.Person[0].Age, Sex: data.Person[0].Sex, District: data.Person[0].District,
+        //             District: data.Person[0].District, ReportDate: data.Person[0].ReportDate, Result: data.Person[0].Result
+        //         });
+        //    }
+
+        //})
+        $('#divResult').show();
+        $('#gridRole').data("kendoGrid").dataSource.read();
+    }
+
+  
+    function submitQueryM() {
+        var mob = $('#txtMobileNo').val();
+        var pass = $('#txtPassportNo').val();
+///        $('#txtMobileNo').attr("readonly", "readonly");
+   ////     $('#txtPassportNo').attr("readonly", "readonly");
+
+        $('#txtPassportNo').focus().select();
+        document.getElementById('')
+        $('#divmessage').html('');
+
+         
+        var otp = "";
+        try {
+            otp = sentOTP;//'(((CovidCert.Models.ApplicantModel)Session["Temp"]).Otp)'
+        }
+        catch (ex) {
+            otp = "";
+        }
+        var otptxt = $('#txtOTP').val();
+      
+        $.post("/Home/CheckEncription/", {
+            val: otptxt
+        }, function (data) {
+            
+            if (otp != data.ret) {
+                alert(" Your OTP not Matched. Please Check");
+                $('#btnOTP').val('').focus();
+            }
+            else {
+                $('#divResult').show();
+
+                //for (var i = 0; i < result.length; i++) {
+                //    var event = result[i];
+                //    result[i].SpecimenReceivedDate = kendo.parseDate(event.SpecimenReceivedDate, ["MM/dd/yyyy", "yyyy/MM/dd"]);
+                //    result[i].TestResultDate = kendo.parseDate(event.TestResultDate, ["MM/dd/yyyy", "yyyy/MM/dd"]);
+
+                //}
+
+
+                //$('#gridRole').data("kendoGrid").setDataSource(result);
+                $('#gridRole').data("kendoGrid").dataSource.read();
+            }
+        });
+           
+      
+        //alert(otp);
+        //alert(otpIn);
+        
+
+    
+
+    }
+
+</script>
+
+
+
+
+
+                </div>
+
+            </div>
+             
+        </div>
+
+
+        <div class="col-12 xFooter">
+            Supported By :
+
+            <a href="http://www.xtrim-it.com/" target="_blank" style="float:right;">
+                <img height="25" src="./index_files/xTrim.png" alt="xTrimIT Logo">
+            </a>
+            <a href="https://www.bloomberg.org/" target="_blank" style="float:right; border-right:2px double green;border-left:2px double green; padding:0 5px;margin:0 5px;">
+                <img height="25" src="./index_files/bloomberg.jpg" alt="BRAC Logo">
+            </a>
+            <a style="float:right; margin-right:10px !important">
+                <img height="30" src="./index_files/hiso-logo.png" alt="HISO Logo">
+            </a>
+        </div>
+
+    </div>
+
+
+</body></html>
